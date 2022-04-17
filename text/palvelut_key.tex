@@ -4,20 +4,9 @@ ver@l3backend.sty\endcsname{}
 
 \usepackage{geometry}
 \usepackage[hidelinks]{hyperref}
-\usepackage{tikz}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{mathtools}
 \usepackage{setspace}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{epigraph}
-\usepackage{etoolbox}
-\usepackage{apacite}
 \usepackage{xcolor}
 \usepackage{graphicx}
-\usepackage{subcaption}
 \usepackage[utf8]{inputenc}
 \usepackage{fontspec}
 \usepackage{l3backend}
@@ -28,12 +17,7 @@ ver@l3backend.sty\endcsname{}
 \setmainlanguage{finnish}
 \addto\captionsfinnish{\renewcommand{\figurename}{Kuvio}}
 
-\newcommand{\tyovoimakoulutus}{\input{../plots/eurostat_statfin/Työvoimakoulutus_selite.txt}\unskip} 
-%\newcommand{\firstdatamonth}{\input{parameters/firstdatamonth.txt}\unskip} 
-
 \newcommand{\datalahde}[1]{\input{../plots/eurostat_statfin/#1_selite.txt}\unskip} 
-
-%\newcommand{\newcaption}[1]{\caption{\textit{\footnotesize{#1}}}}
 \newcommand{\captionselite}[1] {\textit{\footnotesize{#1}}}
 
 
@@ -47,15 +31,17 @@ ver@l3backend.sty\endcsname{}
  
 \begin{document}
 
-\noindent \textbf{Liite} \par
+\noindent \textbf{Euroopan komission ja Tilastokeskuksen työvoimapalvelujen luokitus} \par
+\vspace{0.5cm}
 
-%\noindent \hfill {Juho Alasalmi}{\par}
-%\noindent Pellervon Taloustutkimus \hfill {\href{mailto: juho.alasalmi@ptt.fi}{\textcolor{blue}{juho.alasalmi@ptt.fi}}}{\par}
+\noindent Juho Alasalmi{\par}
+\noindent \href{mailto: juho.alasalmi@ptt.fi}{\textcolor{blue}{juho.alasalmi@ptt.fi}}{\par}
+\noindent Pellervon Taloustutkimus {\par}
 
-\vspace{1cm}
+\vspace{0.5cm}
 \setstretch{1.2}
 
-Euroopan komissio pyrkii tietoja kerätessään luomaan aineiston, joka on vertailukel-poinen eri valtioiden välillä. Työ- ja elinkeinoministeriön on tietojaan luovuttaessaan sovitettava Suomessa käytössä olevat työvoimapalvelut Euroopan komission jaotte-luohjeisiin. Eri palveluiden määritelmät Euroopan komission aineistossa ovat hieman karkeammat ja osaltaan erilaiset kuin TE-toimistojen työvoimapalvelujen rekisteröinnissä ja yksilötason rekisteriaineistoissa.
+Euroopan komissio pyrkii tietoja kerätessään luomaan aineiston, joka on vertailukel-poinen eri valtioiden välillä. Työ- ja elinkeinoministeriön on tietojaan luovuttaessaan sovitettava Suomessa käytössä olevat työvoimapalvelut Euroopan komission jaotteluohjeisiin. Eri palveluiden määritelmät Euroopan komission aineistossa ovat hieman karkeammat ja osaltaan erilaiset kuin TE-toimistojen työvoimapalvelujen rekisteröinnissä ja yksilötason rekisteriaineistoissa.
 
 Euroopan komission aineiston luokittelu ei myöskään sisällä tietoa sen yhteydestä kansallisiin, esimerkiksi Työnvälitystilaston käyttämään luokitukseen. Yhdistämme Euroopan komission aineiston työvoimapalvelujen luokituksen Tilastokeskuksen StatFin-palvelun kautta saataviin työnvälitystilaston työvoimapalvelujen luokituksiin vertailemalla näiden aineistojen tietoja palveluissa olleiden, aloittaneiden ja lopettaneiden määristä. Käytännössä tarkastelemme mitkä StatFin-palvelussa käytössä olevat työvoimapalvelujen koodit ryhmänä tuottavat samat osallistuneiden, aloittaneiden ja lopettaneiden määrät kuin kukin koodi Euroopan komission aineistossa.
 
@@ -91,10 +77,5 @@ LMP TYPE & code statfin & lmp name fin & palveluluokka \\ \hline
    \label{fig:kdieksl}
 \end{figure}
 }
-
-
-
-% \bibliographystyle{apacite}
-% \bibliography{kirjasto}
 
 \end{document}
