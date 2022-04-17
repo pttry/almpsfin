@@ -1,0 +1,138 @@
+---
+title: "Työvoimapalvelut avoimessa aineistossa"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tyovoimapalvelut_avoimessa_aineistossa}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=7, 
+  fig.height=6,
+  fig.align = "center") 
+```
+
+```{r setup, include = FALSE}
+
+library(tidyverse)
+library(pttdatahaku)
+library(ggptt)
+library(KT196)
+set_ptt()
+theme_update(legend.position = "bottom",
+          legend.justification = "left")
+
+show_tables <- function(.palveluluokka) {
+  
+  pttdatahaku::ptt_glimpse_db("tyovoimapalvelut_db") |> 
+             filter(palveluluokka == .palveluluokka) |> 
+             select(table, title) |> tibble()
+  
+}
+
+plot <- function(data, group, labels) {
+  
+  data |> filter(value != 0) |>
+  group_by( {{group}}) |>
+  mutate(value_trend = statfitools::trend_series(value, time)) |>
+  gather(trend, value, value, value_trend) |>
+  mutate(trend = trend == "value_trend") |>
+  ungroup() |> 
+            mutate(value_year = ifelse(grepl("01-01", time), value, NA)) |>
+            ggplot(aes(x = time, alpha = trend, shape = {{group}}, color = {{group}})) +
+            geom_line(aes(y = value)) +
+            geom_point(aes(y = value_year)) +
+            scale_alpha_discrete(range = c(0.3,1)) +
+            guides(alpha = FALSE) +
+            scale_shape_manual(values = 1:length(labels), labels = labels) +
+  scale_y_continuous(labels = ~format(.x, big.mark = " "), breaks = seq(0,50000, by = 10000)) +
+  scale_x_date(date_breaks = "2 year",
+               date_labels = "%Y") +
+  labs(x = NULL, shape = NULL, color = NULL, y = "Palvelussa laskentapäivänä") +
+  scale_color_discrete(labels = labels) 
+  
+}
+
+```
+
+Tietoa työvoimapalveluista on tauluissa 
+
+```{r}
+pttdatahaku::ptt_glimpse_db("tyovoimapalvelut_db") |>
+             select(table, title, palveluluokka, time_var) |> tibble()
+```
+
+Yleisesti tietoa kaikista työvoimapalveluista on tauluissa "tyonv_12u4" ja "tyonv_12u5". Muuttujat ja muuttujien luokat näissä tauluissa ovat samat. "tyonv_12u5" tiedot ovat ulkomaalaisten joukossa. 
+
+# Työvoimapalvelujen luokat
+
+Työvoimapalvelut jakautuvat viiteen luokkaan: työvoimakoulutus, työllistäminen, valmennukset, kokeilut ja muut palvelut
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+
+palveluluokka_names <- c("Työvoimakoulutus",
+                         "Valmennukset",
+                         "Työllistetty",
+                         "Työ- ja koulutuskokeilut",
+                         "Vuorotteluvapaasijaiset",
+                         "Kuntouttava työtoiminta",
+                         "Omaehtoinen opiskelu")
+
+  ptt_read_data("tyonv_12u4") |>
+    statfi_select(tiedot, time, value) |>
+  filter(value != 0) |>
+  group_by(tiedot) |>
+  mutate(value_trend = statfitools::trend_series(value, time)) |>
+  gather(trend, value, value, value_trend) |>
+  mutate(trend = trend == "value_trend") |>
+  ungroup() |> 
+  filter(!tiedot %in%  c("AKTASTE", "TYOTTOMATLOPUSSA", "PALVELUISSAYHTEENSA")) |>
+            mutate(value_year = ifelse(grepl("01-01", time), value, NA)) |>
+            ggplot(aes(x = time, alpha = trend, shape = tiedot, color = tiedot)) +
+            geom_line(aes(y = value)) +
+            geom_point(aes(y = value_year)) +
+            scale_alpha_discrete(range = c(0.3,1)) +
+            guides(alpha = FALSE) +
+            scale_shape_manual(values = 1:7, labels = palveluluokka_names) +
+  scale_y_continuous(labels = ~format(.x, big.mark = " "), breaks = seq(0,50000, by = 10000)) +
+  scale_x_date(date_breaks = "2 year",
+               date_labels = "%Y") +
+  labs(x = NULL, shape = NULL, color = NULL, y = "Palvelussa laskentapäivänä") +
+  scale_color_discrete(labels = palveluluokka_names) +
+  guides(color = guide_legend(nrow = 3), shape = guide_legend(nrow = 3))
+
+```
+
+# Työvoimakoulutus
+
+```{r child = "vignettes/tyovoimakoulutus.Rmd"}
+
+```
+
+# Työllistäminen
+
+```{r child = "vignettes/tyollistaminen.Rmd"}
+
+```
+
+# Valmennukset
+
+```{r child = "vignettes/valmennus.Rmd"}
+
+```
+
+# Kokeilut
+
+```{r child = "vignettes/kokeilut.Rmd"}
+
+```
+
+# Muut palvelut
+
+```{r child = "vignettes/muut_palvelut.Rmd"}
+
+```

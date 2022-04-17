@@ -1,0 +1,27 @@
+taulut <- tibble::tribble(
+  ~table_location,                                       ~palveluluokka,       ~palvelut_var_name,        ~query,
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u4.px/",  "kaikki",             "NA",                          list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u5.px/",  "kaikki",             "NA",                          list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/vv/statfin_tyonv_pxt_12v8.px/",  "tyovoimakoulutus",   "Valtionosuuskoulutus(VOS)",   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Edeltävä työllisyys"=c("SSS"),"Koulutuksen päättymissyy"=c("SSS"),"Valtionosuuskoulutus(VOS)"=c("*"),"Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/vv/statfin_tyonv_pxt_12v7.px/",  "tyovoimakoulutus",   "Valtionosuuskoulutus(VOS)",   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Edeltävä työllisyys"=c("SSS"),"Ammattiryhmä"=c("SSS"),"Valtionosuuskoulutus(VOS)"=c("*"),"Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kv/statfin_tyonv_pxt_12ur.px/",  "tyovoimakoulutus",   "Valtionosuuskoulutus(VOS)",   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Ammattiryhmä"=c("SSS"),"Valtionosuuskoulutus(VOS)"=c("*"),"Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u2.px/",  "tyovoimakoulutus",   "Valtionosuuskoulutus(VOS)",   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Ammattiryhmä"=c("SSS"),"Valtionosuuskoulutus(VOS)"=c("*"),"Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u3.px/",  "tyovoimakoulutus",   "Valtionosuuskoulutus(VOS)",   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Edeltävä työllisyys"=c("SSS"), "Koulutuksen päättymissyy"=c("SSS"),"Valtionosuuskoulutus(VOS)"=c("*"),"Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/vv/statfin_tyonv_pxt_12va.px/",  "tyollistaminen",     "Työllistämisen laji",         list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Työllistämisen laji"=c("*"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u7.px/",  "tyollistaminen",     "Työllistämisen laji",         list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Työllistämisen laji"=c("*"), "Ammattiryhmä"=c("SSS"), "Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u6.px/",  "tyollistaminen",     "Työllistämisen laji",         list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Työllistämisen laji"=c("*"), "Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kv/statfin_tyonv_pxt_12ut.px/",  "tyollistaminen",     "Työllistämisen laji",         list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Työllistämisen laji"=c("*"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/vv/statfin_tyonv_pxt_12v9.px/",  "valmennus",          "Valmennus",                   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Edeltävä työllisyys"=c("SSS"),"Koulutuksen päättymissyy"=c("SSS"), "Valmennus"=c("3", "4", "5"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kv/statfin_tyonv_pxt_12us.px/",  "valmennus",          "Valmennus",                   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Valmennus"=c("3", "4", "5"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u1.px/",  "valmennus",          "Valmennus",                   list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Ammattiryhmä"=c("SSS"), "Valmennus"=c("3", "4", "5"), "Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kv/statfin_tyonv_pxt_12uw.px/",  "kokeilu",            "Arviointi(kokeilut)",         list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Arviointi(kokeilut)"=c("*"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kv/statfin_tyonv_pxt_12uv.px/",  "kokeilu",            "Arviointi(kokeilut)",         list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmitys"=c("SSS"), "Ammattiryhmä"=c("SSS"), "Edeltävä työllisyys"=c("SSS"),"Arviointi(kokeilut)"=c("*"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u8.px/",  "kokeilu",            "Arviointi(kokeilut)",         list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Edeltävä työllisyys"=c("SSS"), "Arviointi(kokeilut)"=c("*"), "Kuukausi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kv/statfin_tyonv_pxt_12ux.px/",  "muu",                "Muut palvelut",               list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Muut palvelut"=c("02", "05", "06"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kv/statfin_tyonv_pxt_12uu.px/",  "muu",                "Muut palvelut",               list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Edeltävä työllisyys"=c("SSS"), "Muut palvelut"=c("02", "05", "06"),"Ammattiryhmä"=c("SSS"), "Vuosi"=c("*"),"Tiedot"=c("*")),
+  "StatFin/tym/tyonv/kk/statfin_tyonv_pxt_12u9.px/",  "muu",                "Muut palvelut",               list("Alue"=c("SSS"), "Sukupuoli"=c("SSS"), "Ikäryhmät"=c("SSS"), "Edeltävä työllisyys"=c("SSS"), "Muut palvelut"=c("02", "05", "06"), "Kuukausi"=c("*"),"Tiedot"=c("*"))
+)
+
+
+usethis::use_data(taulut, overwrite = TRUE)
+

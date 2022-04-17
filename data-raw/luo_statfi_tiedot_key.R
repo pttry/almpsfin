@@ -1,0 +1,45 @@
+statfi_tiedot_key <- tibble::tribble(
+   ~tiedot,                 ~new_tiedot,
+   "TVKOULUTUSLOP",         "STK",
+   "KOULOLOYHT",            "TOTAL",
+   "TVKALKOI",              "ENT",
+   "TVKPAATTYI",            "EXIT",
+   "TVKAVGPAATKESTO",       "KESTO",
+   "TVKAVGPAATKESTOVV",     "KESTO",
+   "KOULOLOYHTVV",          "TOTAL",
+   "TVKALKOIVV",            "ENT",
+   "TYOLLISTETTYLOP",       "STK",
+   "SIJOITYHT",             "TOTAL",
+   "SIJOITALKOI",           "ENT",
+   "SIJOITPAATTYI",         "EXIT",
+   "SIJOITAVGPAATKESTO",    "KESTO",
+   "SIJOITYHTVV",           "TOTAL",
+   "SIJOITALKOIVV",         "ENT",
+   "SIJOITPAATTYIVV",       "EXIT",
+   "SIJOITAVGPAATKESTOVV",  "KESTO",
+   "VALMENNUSLOP",          "STK",
+   "VALMENNUSYHTVV",        "TOTAL",
+   "VALMENNUSALKOIVV",      "ENT",
+   "VALMENNUSPAATTYIVV",    "EXIT",
+   "VALMAVGPAATKESTOVV",    "KESTO",
+   "KOKEILULOP",            "STK",
+   "KOKAVGEDTYKESTOLOP",    "KESTO",
+   "KOKTOIMPITYHT_TAJO",    "TOTAL",
+   "KOKTOIMALKOI_TAJO",     "ENT",
+   "KOKTOIMPAATTYI_TAJO",   "EXIT",
+   "KOKAVGPAATKESTO_TAJO",  "KESTO",
+   "MTPPALVELUTLOP",        "STK",
+   "MTPALVELUYHT",          "TOTAL",
+   "MTPTOIMPIDEALKOI",      "ENT",
+   "MTPTOIMPIDEPAATTYI",    "EXIT",
+   "MTPAVGPAATKESTO",       "KESTO",
+   "MTPTOIMPITYHT_TAJO",    "TOTAL",
+   "MTPTOIMALKOI_TAJO",     "ENT",
+   "MTPTOIMPAATTYI_TAJO",   "EXIT",
+   "MTPAVGPAATKESTO_TAJO",  "KESTO"
+)
+
+
+statfi_tiedot_key <- setNames(statfi_tiedot_key$new_tiedot, statfi_tiedot_key$tiedot)
+
+usethis::use_data(statfi_tiedot_key, overwrite = TRUE)
