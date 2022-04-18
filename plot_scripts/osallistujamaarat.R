@@ -36,14 +36,6 @@ plot_match <- function(df) {
 
 labels <- c("STK" = "Palvelussa olevat", "ENT" = "Aloittaneet", "EXIT" = "Lopettaneet")
 
-
-create_selite <- function(tiedot, table, aggregated) {
-
-  facet <- labels[tiedot]
-  paste0(facet, ": ", "työnvälitystilasto, taulu ", table, ifelse(aggregated, ", vuosittaiset määrät laskettu kuukausiaineistosta", ""))
-
-}
-
 write_selite <- function(df) {
 
   data_selite <-
@@ -54,8 +46,13 @@ write_selite <- function(df) {
 
   data_selite <- data_selite |>
     mutate(tiedot = statficlassifications::key_recode(tiedot, labels, tiedot)) |>
-    mutate(selite = paste0(tiedot, ": ", "StatFin työnvälitystilasto, taulu ", table, ifelse(aggregated, ", vuosittaiset määrät laskettu kuukausiaineistosta", "")))
-  selite <-  paste0("Datalähde: ", paste0(data_selite$selite, collapse = ", "))
+    mutate(selite = paste0(tiedot, ": ", "StatFin työnvälitystilasto, taulu ", table,
+                           ifelse(aggregated, ", vuosittaiset määrät laskettu kuukausiaineistosta", ""),
+                           ifelse(aggregated & tiedot == "Palvelussa olevat", ifelse(STK_type == "mean", " kuukausikeskiarvona",
+                                                                       ifelse(STK_type == "end", " vuoden viimeisen kuukauden tietona", "")), ""),
+                           ifelse(aggregated & tiedot != "Palvelussa olevat", " kuukausitietojen summana", ""), "."))
+
+  selite <-  paste0(paste0(data_selite$selite, collapse = " "))
   gsub("_", "\\\\_", selite)
 
 }
@@ -100,12 +97,13 @@ data_eurostat <- lmp_participants |>
 
 palvelut <- unique(eurostat_statfi_key$lmp_name_fin)
 stringi::stri_write_lines(paste0(palvelut, collapse = ", "), paste0("plots/eurostat_statfin/palvelut.txt"))
+
 for(palvelu in palvelut) {
 
   df <- filter(eurostat_statfi_key, lmp_name_fin == palvelu)
   matched_data <- match_palvelut(df$LMP_TYPE, df$code_statfi)
   plot_match(matched_data)
-  ggsave(paste0("plots/eurostat_statfin/", palvelu, ".pdf"), width = 7, height = 3)
+  ggsave(paste0("plots/eurostat_statfin/", palvelu, ".pdf"), width = 10, height = 4)
   selite <- write_selite(matched_data)
   stringi::stri_write_lines(selite, paste0("plots/eurostat_statfin/", palvelu, "_selite.txt"))
 

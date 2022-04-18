@@ -41,25 +41,31 @@ ver@l3backend.sty\endcsname{}
 \vspace{0.5cm}
 \setstretch{1.2}
 
-Euroopan komissio pyrkii tietoja kerätessään luomaan aineiston, joka on vertailukel-poinen eri valtioiden välillä. Työ- ja elinkeinoministeriön on tietojaan luovuttaessaan sovitettava Suomessa käytössä olevat työvoimapalvelut Euroopan komission jaotteluohjeisiin. Eri palveluiden määritelmät Euroopan komission aineistossa ovat hieman karkeammat ja osaltaan erilaiset kuin TE-toimistojen työvoimapalvelujen rekisteröinnissä ja yksilötason rekisteriaineistoissa.
+Euroopan komission Työllisyys, sosiaaliasiat ja osallisuus -pääosasto kerää tietoa työvoimapalvelujen osallistujamääristä ja kustannuksista Euroopan unionissa. Tämä dokumentti esittää esittää, kuinka Euroopan komission aineiston työvoimapalvelujen luokitus vastaa Tilastokeskuksen StatFin-palvelun työvoimapalvelujen luokitusta. 
 
-Euroopan komission aineiston luokittelu ei myöskään sisällä tietoa sen yhteydestä kansallisiin, esimerkiksi Työnvälitystilaston käyttämään luokitukseen. Yhdistämme Euroopan komission aineiston työvoimapalvelujen luokituksen Tilastokeskuksen StatFin-palvelun kautta saataviin työnvälitystilaston työvoimapalvelujen luokituksiin vertailemalla näiden aineistojen tietoja palveluissa olleiden, aloittaneiden ja lopettaneiden määristä. Käytännössä tarkastelemme mitkä StatFin-palvelussa käytössä olevat työvoimapalvelujen koodit ryhmänä tuottavat samat osallistuneiden, aloittaneiden ja lopettaneiden määrät kuin kukin koodi Euroopan komission aineistossa.
+Euroopan komissio pyrkii luomaan aineiston, joka on vertailukelpoinen eri valtioiden välillä. Työ- ja elinkeinoministeriön on sovitettava Suomessa käytössä olevat työvoimapalvelut Euroopan komission jaotteluohjeisiin. Euroopan komission aineiston luokittelu ei sisällä tietoa sen yhteydestä jäsenvaltioiden käyttämiin luokituksiin. 
+
+Yhdistämme Euroopan komission aineiston työvoimapalvelujen luokituksen Tilastokeskuksen StatFin-palvelun kautta saataviin työnvälitystilaston työvoimapalvelujen luokituksiin vertailemalla näiden aineistojen tietoja palveluissa olleiden, aloittaneiden ja lopettaneiden määristä. Käytännössä tarkastelemme mitkä StatFin-palvelussa käytössä olevat työvoimapalvelujen koodit ryhmänä tuottavat samat osallistuneiden, aloittaneiden ja lopettaneiden määrät kuin kukin koodi Euroopan komission aineistossa.
+
+Euroopan komission aineisto on vuosittaista. StatFin-palvelussa ei ole saataville kaikille työvoimapalveluillle palveluissa olleiden, aloittaneiden ja lopettaneiden määriä vuosittaisissa aineistoissa. Mikäli vuosittaisia aineistoja ei ole saatavilla, vuosittaiset luvut ovat laskettu kuukausittaisista aineistoista. Erityisesti huomataan, että aineistot vastaavat toisiaan, mikäli palvelussa olevien määrä Tilastokeskuksen aineistoista lasketaan kuukausikeskiarvona. Euroopan komission aineiston varantosuure on siis kuukausikeskiarvo.
 
 Taulukko \ref{tbl:sldkjf23} esitää avaimen joka antaa kullekin Euroopan komission työvoimapalvelukoodille StatFin-palvelun vastaavat työvoimapalvelujen koodit. Kuviot 1-16 esittävät kuinka koodien ryhmittelyt vastaavat toisinaan kyseisten työvoimapalvelujen osallistujien, aloittaneiden ja lopettaneiden määrien mukaan.
 
-\vspace{1cm}
+\vspace{0.5cm}
 \noindent Euroopan komission aineisto: \\ \footnotesize \href{https://webgate.ec.europa.eu/empl/redisstat/databrowser/product/page/LMP_EXPME$FI}{\textcolor{blue}{https://webgate.ec.europa.eu/empl/redisstat/databrowser/product/page/LMP\textunderscore EXPME\$FI}} \normalsize
 
-\vspace{1cm} 
-\noindent StatFin-palvelu: \\ \footnotesize\href{https://pxnet2.stat.fi/PXWeb/pxweb/fi/StatFin/}{\textcolor{blue}{https://pxnet2.stat.fi/PXWeb/pxweb/fi/StatFin/}}\normalsize
+\vspace{0.5cm}
+\noindent StatFin \\ \footnotesize\href{https://pxnet2.stat.fi/PXWeb/pxweb/fi/StatFin/}{\textcolor{blue}{https://pxnet2.stat.fi/PXWeb/pxweb/fi/StatFin/}}\normalsize
 
-\vspace{1cm}
+\vspace{0.5cm}
 \noindent Luokitusavain .rda-tiedostona ja tämän analyysin koodit: \\  \footnotesize\href{https://github.com/pttry/almpsfin}{\textcolor{blue}{https://github.com/pttry/almpsfin}}\normalsize
 \begin{table}[b]
 \footnotesize
 \centering
 \begin{tabular}{l|l|l|l}
-LMP TYPE & code statfin & lmp name fin & palveluluokka \\ \hline
+\begin{tabular}{l} Koodi Euroopan \\ komission \\ aineistossa \end{tabular} & 
+\begin{tabular}{l} Koodi \\ StatFin- \\ palvelussa \end{tabular} & 
+Työvoimapalvelu & Luokka \\ \hline
 
 21\textunderscore FI6 & 0 & Työvoimakoulutus & muu \\ 21\textunderscore FI6 & 1 & Työvoimakoulutus & muu \\ 7\textunderscore FI11 & 65 & Starttiraha & tyollistaminen \\ 7\textunderscore FI11 & 62 & Starttiraha & tyollistaminen \\ 7\textunderscore FI55 & 61 & Starttiraha ei-työttömille & tyollistaminen \\ 24\textunderscore FI7 & 51 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 24\textunderscore FI7 & 55 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 24\textunderscore FI7 & 56 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 24\textunderscore FI7 & 58 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 24\textunderscore FI7 & 68 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 24\textunderscore FI7 & 87 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 24\textunderscore FI7 & 88 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 24\textunderscore FI7 & 89 & Oppisopimuskoulutus työttömille & tyollistaminen \\ 41\textunderscore FI10 & 80 & Palkkatuki yksityiselle & tyollistaminen \\ 41\textunderscore FI10 & 81 & Palkkatuki yksityiselle & tyollistaminen \\ 41\textunderscore FI10 & 6T & Palkkatuki yksityiselle & tyollistaminen \\ 41\textunderscore FI10 & 6V & Palkkatuki yksityiselle & tyollistaminen \\ 41\textunderscore FI10 & 60 & Palkkatuki yksityiselle & tyollistaminen \\ 41\textunderscore FI10 & 69 & Palkkatuki yksityiselle & tyollistaminen \\ 6\textunderscore FI9 & 54 & Palkkatuki kunnalle & tyollistaminen \\ 6\textunderscore FI9 & 57 & Palkkatuki kunnalle & tyollistaminen \\ 6\textunderscore FI9 & 5T & Palkkatuki kunnalle & tyollistaminen \\ 6\textunderscore FI9 & 5V & Palkkatuki kunnalle & tyollistaminen \\ 6\textunderscore FI9 & 53 & Palkkatuki kunnalle & tyollistaminen \\ 6\textunderscore FI9 & 50 & Palkkatuki kunnalle & tyollistaminen \\ 6\textunderscore FI8 & 40 & Valtiolle työllistäminen & tyollistaminen \\ 6\textunderscore FI8 & 41 & Valtiolle työllistäminen & tyollistaminen \\ 11\textunderscore FI59 & 3 & Työnhakuvalmennus & valmennus \\ 11\textunderscore FI60 & 5 & Uravalmennus & valmennus \\ 11\textunderscore FI61 & 4 & Työhönvalmennus & valmennus \\ 21\textunderscore FI63 & 36 & Koulutuskokeilu & kokeilu \\ 22\textunderscore FI62 & 20 & Työkokeilu & kokeilu \\ 22\textunderscore FI62 & 21 & Työkokeilu & kokeilu \\ 22\textunderscore FI66 & 22 & Rekrytointikokeilu & kokeilu \\ 6\textunderscore FI36 & 05 & Kuntouttava työtoiminta & muu \\ 21\textunderscore FI17 & 06 & Omaehtoinen opiskelu työttömyysetuudella & muu \\ 43\textunderscore FI16 & 02 & Työnvuorottelu & muu
 
@@ -72,7 +78,7 @@ LMP TYPE & code statfin & lmp name fin & palveluluokka \\ \hline
 
 \begin{figure}[b]
 \centering
-\includegraphics[scale = 0.9]{../plots/eurostat_statfin/\palvelu.pdf}
+\includegraphics[scale = 0.6]{../plots/eurostat_statfin/\palvelu.pdf}
 \caption{\palvelu, palvelussa olleet, aloittaneet ja lopettaneet Euroopan komission ja Tilastokeskuksen aineistoissa. \captionselite{ \protect \datalahde{\palvelu}}}
    \label{fig:kdieksl}
 \end{figure}
