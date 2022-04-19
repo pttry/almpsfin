@@ -80,6 +80,7 @@ data_statfi <- statfi_participants |>
   filter(time_var == "vuosi",
          tiedot %in% c("STK", "STK_mean", "STK_end", "ENT", "EXIT")) |>
   mutate(time = lubridate::year(time)) |>
+  filter(time <= 2020) |>
   arrange(aggregated) |>
   #select(-aggregated) |>
   group_by(time, time_var, code_statfi, tiedot, palveluluokka) |>
