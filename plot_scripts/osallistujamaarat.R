@@ -41,7 +41,7 @@ write_selite <- function(df) {
   data_selite <-
     df |>
     filter(!is.na(table)) |>
-    filter(time == 2010) |>
+    filter(time == 2015) |>
     group_by(tiedot)
 
   data_selite <- data_selite |>
