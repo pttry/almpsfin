@@ -30,7 +30,14 @@ plot_match <- function(df) {
     scale_y_continuous(labels = axis_text_format) +
     scale_shape_manual(values = shapes[c(4,5)]) +
     scale_x_continuous(breaks = seq(2006, 2021, by = 5)) +
-    labs(x = NULL, y = NULL, color = NULL, linetype = NULL)
+    labs(x = NULL, y = NULL, color = NULL, linetype = NULL) +
+    theme_bw() +
+    theme(legend.position = "bottom",
+          legend.title = element_text(size = 25),
+          legend.text = element_text(size = 25),
+          axis.title = element_text(size = 25),
+          axis.text = element_text(size = 25),
+          strip.text = element_text(size = 25))
 }
 
 

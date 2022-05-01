@@ -1,5 +1,6 @@
 axis_text_format <- function(x) {
-  ifelse(x <= 1, deci_comma(x), format(x, big.mark = " "))
+  ifelse(x <= 1, format(x, decimal.mark = ",", scientific = FALSE, trim = TRUE),
+                 format(x, big.mark = " "))
 }
 
 
