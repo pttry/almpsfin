@@ -38,7 +38,12 @@ eurostat_statfi_key <- tibble::tribble(
       "22_FI66",        "22",           "Rekrytointikokeilu",                           "kokeilu",
       "6_FI36",         "05",           "Kuntouttava työtoiminta",                      "muu",
       "21_FI17",        "06",           "Omaehtoinen opiskelu työttömyysetuudella",     "muu",
-      "43_FI16",        "02",           "Työnvuorottelu",                               "muu"
+      "43_FI16",        "02",           "Työnvuorottelu",                               "muu",
+      "22_FI12",        "71",           "Työelämävalmennus",                            "valmennus",
+      "22_FI12",        "64",           "Työelämävalmennus",                            "valmennus",
+      "22_FI15",        "70",           "Työharjoittelu",                               "tyollistaminen",
+      "43_FI13",        "73",           "Osa-aikatyöllistetty",                        "tyollistaminen"
+
 )
 
 usethis::use_data(eurostat_statfi_key, overwrite = TRUE)

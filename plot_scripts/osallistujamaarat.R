@@ -22,23 +22,28 @@ match_palvelut <- function(codes_eurostat, codes_statfi) {
 }
 
 plot_match <- function(df) {
+
   df |> unite(data_type, aggregated, STK_type) |>
-    ggplot(aes(x = time, y = value, color = lahde_legend, linetype = lahde_legend, shape = data_type)) +
+    ggplot(aes(x = time, y = value, color = lahde_legend, linetype = lahde_legend, shape = lahde_legend)) +
     geom_line(size = 1) +
-    geom_point() +
-    facet_wrap(~tiedot) +
+    geom_point(size = 2) +
+    facet_wrap(~tiedot, labeller = as_labeller(labels)) +
     scale_y_continuous(labels = axis_text_format) +
-    scale_shape_manual(values = shapes[c(4,5)]) +
-    scale_x_continuous(breaks = seq(2006, 2021, by = 5)) +
-    labs(x = NULL, y = NULL, color = NULL, linetype = NULL) +
+    scale_shape_manual(name = "Lähde ja palvelun koodi", values = c(3,4)) +
+    scale_color_manual(name = "Lähde ja palvelun koodi", values = color_palette) +
+    scale_linetype_discrete(name = "Lähde ja palvelun koodi") +
+    scale_x_continuous(breaks = seq(2008, 2020, by = 4)) +
+    labs(y = NULL, x = NULL) +
     theme_bw() +
     theme(legend.position = "bottom",
-          legend.title = element_text(size = 25),
-          legend.text = element_text(size = 25),
-          axis.title = element_text(size = 25),
-          axis.text = element_text(size = 25),
-          strip.text = element_text(size = 25))
+          legend.title = element_text(size = 15),
+          legend.text = element_text(size = 15),
+          axis.title = element_text(size = 15),
+          axis.text = element_text(size = 15),
+          strip.text = element_text(size = 15, hjust = 0),
+          strip.background = element_blank())
 }
+
 
 
 labels <- c("STK" = "Palvelussa olevat", "ENT" = "Aloittaneet", "EXIT" = "Lopettaneet")
@@ -64,22 +69,6 @@ write_selite <- function(df) {
 
 }
 
-plot_match <- function(df) {
-
-  df |> unite(data_type, aggregated, STK_type) |>
-    ggplot(aes(x = time, y = value, color = lahde_legend, linetype = lahde_legend, shape = lahde_legend)) +
-    geom_line(size = 1) +
-    geom_point(size = 2) +
-    facet_wrap(~tiedot, labeller = as_labeller(labels)) +
-    scale_y_continuous(labels = axis_text_format) +
-    scale_shape_manual(name = "Lähde ja palvelun koodi", values = c(3,4)) +
-    scale_color_manual(name = "Lähde ja palvelun koodi", values = color_palette) +
-    scale_linetype_discrete(name = "Lähde ja palvelun koodi") +
-    scale_x_continuous(breaks = seq(2008, 2020, by = 4)) +
-    labs(y = NULL, x = NULL) +
-    theme(strip.background = element_blank(),
-          strip.text = element_text(hjust = 0))
-}
 
 
 data(statfi_participants)

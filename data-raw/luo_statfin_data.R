@@ -1,9 +1,8 @@
-base_url <- "https://pxnet2.stat.fi/PXWeb/api/v1/fi/"
 data(taulut)
 
 for(i in 1:dim(taulut)[1]) {
 
-url <- paste0(base_url, taulut$table_location[i])
+url <- paste0("https://pxnet2.stat.fi/PXWeb/api/v1/fi/", taulut$table_location[i])
 query <- taulut$query[i][[1]]
 
 px_data <- pxweb::pxweb_get(url = url, query = query)
