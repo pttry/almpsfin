@@ -1,0 +1,1 @@
+Datalähde: Tilastokeskus, todellinen: päättyneiden osallistumisten kesto tauluissa tyonv\_12va, tyonv\_12v9. Tilastokeskus, laskettu: laskettu varanto- ja virtasuureista tauluissa tyonv\_12va, tyonv\_12v9, tyonv\_12u6, tyonv\_12u1.

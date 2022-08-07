@@ -1,1 +1,1 @@
-Palvelussa olevat: StatFin työnvälitystilasto, taulu tyonv\_12u8, vuosittaiset määrät laskettu kuukausiaineistosta kuukausikeskiarvona. Aloittaneet: StatFin työnvälitystilasto, taulu tyonv\_12uv. Lopettaneet: StatFin työnvälitystilasto, taulu tyonv\_12uv.
+Aloittaneet: StatFin työnvälitystilasto, taulu tyonv\_12uv. Lopettaneet: StatFin työnvälitystilasto, taulu tyonv\_12uv. Palvelussa olevat: StatFin työnvälitystilasto, taulu tyonv\_12u8, vuosittaiset määrät laskettu kuukausiaineistosta kuukausikeskiarvona.

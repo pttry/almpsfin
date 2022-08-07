@@ -44,8 +44,6 @@ plot_match <- function(df) {
           strip.background = element_blank())
 }
 
-
-
 labels <- c("STK" = "Palvelussa olevat", "ENT" = "Aloittaneet", "EXIT" = "Lopettaneet")
 
 write_selite <- function(df) {
@@ -69,8 +67,6 @@ write_selite <- function(df) {
 
 }
 
-
-
 data(statfi_participants)
 data_statfi <- statfi_participants |>
   filter(time_var == "vuosi",
@@ -78,8 +74,7 @@ data_statfi <- statfi_participants |>
   mutate(time = lubridate::year(time)) |>
   filter(time <= 2020) |>
   arrange(aggregated) |>
-  #select(-aggregated) |>
-  group_by(time, time_var, code_statfi, tiedot, palveluluokka) |>
+  group_by(time, time_var, code_statfi, tiedot) |>
   filter(row_number() == 1) |>
   ungroup()
 
@@ -109,8 +104,7 @@ for(palvelu in palvelut) {
 
 
 data(eurostat_statfi_key)
-
-table <- paste(unlist(lapply(1:dim(eurostat_statfi_key)[1], function(x) {paste(eurostat_statfi_key[x,], collapse = " & ")})), collapse = " \\ ")
-table <- gsub("_", "\textunderscore ", table)
-
+key <- select(eurostat_statfi_key, LMP_TYPE, code_statfi, lmp_name_fin, palveluluokka_name)
+table <- paste(unlist(lapply(1:dim(key)[1], function(x) {paste(key[x,], collapse = " & ")})), collapse = " \\\\ ")
+table <- gsub("_", "\\\\_", table)
 stringi::stri_write_lines(table, paste0("plots/eurostat_statfin/key.txt"))

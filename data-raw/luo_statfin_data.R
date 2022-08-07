@@ -11,7 +11,10 @@ data <- as.data.frame(px_data,
                       variable.value.type = "code") |>
         statfitools::clean_times2() |>
         dplyr::select(-all_of(names(query)[query == "SSS"])) |>
-        tidyr::pivot_longer(where(is.numeric))
+        tidyr::pivot_longer(where(is.numeric)) |>
+        statfitools::clean_names() |>
+        rename(tiedot = name)
+
 
 data_name <- sapply(url,
                     function(x) {paste(stringr::str_match(x, "statfin_\\s*(.*?)\\s*pxt_\\s*(.*?)\\s*.px")[,2:3], collapse = "")},

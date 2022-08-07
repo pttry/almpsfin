@@ -4,6 +4,7 @@ statfi_tiedot_key <- tibble::tribble(
    "KOULOLOYHT",            "TOTAL",
    "TVKALKOI",              "ENT",
    "TVKPAATTYI",            "EXIT",
+   "TVKPAATTYIVV",          "EXIT",
    "TVKAVGPAATKESTO",       "KESTO",
    "TVKAVGPAATKESTOVV",     "KESTO",
    "KOULOLOYHTVV",          "TOTAL",
