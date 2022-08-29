@@ -15,6 +15,6 @@ Paketti ladataan ja asennetaan seuraavasti:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("https://github.com/pttry/pttdatahaku")
-library(pttdatahaku)
+devtools::install_github("https://github.com/pttry/almpsfin")
+library(almpsfin)
 ```
