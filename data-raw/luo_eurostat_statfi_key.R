@@ -32,16 +32,16 @@ eurostat_statfi_key <- tibble::tribble(
       "11_FI59",        "3",            "Työnhakuvalmennus",                            "valmennus",            "Valmennukset",
       "11_FI60",        "5",            "Uravalmennus",                                 "valmennus",            "Valmennukset",
       "11_FI61",        "4",            "Työhönvalmennus",                              "valmennus",            "Valmennukset",
-      "21_FI63",        "36",           "Koulutuskokeilu",                              "kokeilu",              "Kokeilut",
-      "22_FI62",        "20",           "Työkokeilu",                                   "kokeilu",              "Kokeilut",
-      "22_FI62",        "21",           "Työkokeilu",                                   "kokeilu",              "Kokeilut",
-      "22_FI66",        "22",           "Rekrytointikokeilu",                           "kokeilu",              "Kokeilut",
+      "21_FI63",        "36",           "Koulutuskokeilu",                              "kokeilu",              "Kokeilut ja harjoittelu",
+      "22_FI62",        "20",           "Työkokeilu",                                   "kokeilu",              "Kokeilut ja harjoittelu",
+      "22_FI62",        "21",           "Työkokeilu",                                   "kokeilu",              "Kokeilut ja harjoittelu",
+      "22_FI66",        "22",           "Rekrytointikokeilu",                           "kokeilu",              "Kokeilut ja harjoittelu",
       "6_FI36",         "05",           "Kuntouttava työtoiminta",                      "muu",                  "Muut palvelut",
       "21_FI17",        "06",           "Omaehtoinen opiskelu työttömyysetuudella",     "muu",                  "Muut palvelut",
       "43_FI16",        "02",           "Työnvuorottelu",                               "muu",                  "Muut palvelut",
       "22_FI12",        "71",           "Työelämävalmennus",                            "valmennus",            "Valmennukset",
       "22_FI12",        "64",           "Työelämävalmennus",                            "valmennus",            "Valmennukset",
-      "22_FI15",        "70",           "Työharjoittelu",                               "tyollistaminen",       "Työllistäminen",
+      "22_FI15",        "70",           "Työharjoittelu",                               "kokeilu",              "Kokeilut ja harjoittelu",    # tyollistaminen
       "43_FI13",        "73",           "Osa-aikatyöllistetty",                         "tyollistaminen",       "Työllistäminen"
 
 )
