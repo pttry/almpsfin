@@ -11,4 +11,10 @@ Metadata: [https://ec.europa.eu/employment_social/employment_analysis/lmp/lmp_es
 
 Menetelmät: [https://ec.europa.eu/social/main.jsp?catId=738&langId=en&pubId=8126&furtherPubs=yes](https://ec.europa.eu/social/main.jsp?catId=738&langId=en&pubId=8126&furtherPubs=yes)
 
+Paketti ladataan ja asennetaan seuraavasti:
 
+``` r
+install.packages("devtools")
+devtools::install_github("https://github.com/pttry/pttdatahaku")
+library(pttdatahaku)
+```
