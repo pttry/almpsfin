@@ -78,11 +78,11 @@ Palveluun osallistumisen kustannus on siitä koituva kustannus ajassa kerrottuna
 
 \subsection{Osallistumisen kesto}
 
-Työvoimapalveluihin osallistumisen kestoja voidaan arvioida virta- ja varantosuureiden avulla. Jos palveluun osallistumisen kesto on $T$ päivää, silloin palvelussa olevien määrä (STK) ajanhetkellä $t$ on palvelussa ajanhetkillä $t - T, ..., t$ aloittaneiden määrä (ENT). Siten 
+Työvoimapalveluihin osallistumisen kestoja voidaan arvioida virta- ja varantosuureiden avulla. Jos palveluun osallistumisen kesto on $T$ päivää, silloin palvelussa olevien määrä (STK) ajanhetkellä $t$ on palvelussa ajanhetkillä $t - (T-1), ..., t$ aloittaneiden määrä (ENT). Siten 
 \begin{align}
  \textup{STK} = T \times \textup{ENT} \iff T = \dfrac{\textup{STK}}{\textup{ENT}}
 \end{align}
-Toisaalta, STK ajanhetkellä $t$ on ajanhetkillä $t, ..., t + T$ palvelussa lopettaneiden määrä (EXIT):   
+Toisaalta, STK ajanhetkellä $t$ on ajanhetkillä $t+1, ..., t + T$ palvelussa lopettaneiden määrä (EXIT):   
 \begin{align}
  \textup{STK} = T \times \textup{EXIT} \iff T = \dfrac{\textup{STK}}{\textup{EXIT}}
 \end{align}
