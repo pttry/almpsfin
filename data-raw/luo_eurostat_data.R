@@ -20,6 +20,8 @@ read_lmp_data <- function(url, years = 1997:2020) {
 
 url <- "https://webgate.ec.europa.eu/empl/redisstat/api/dissemination/sdmx/2.1/data/LMP_EXPME$FI/?format=JSON&lang=en"
 
+url <- "https://webgate.ec.europa.eu/empl/redisstat/api/dissemination/sdmx/2.1/data/LMP_EXPME/?format=JSON&lang=en"
+
 resp <- httr::GET(url)
 cont <- httr::content(resp, "text", encoding = "UTF-8")
 x <- jsonlite::fromJSON(cont)
@@ -35,7 +37,13 @@ rownames(flag_key) <- NULL
 
 # Expenditure by LMP intervention
 
+new_url <- "https://webgate.ec.europa.eu/empl/redisstat/api/dissemination/sdmx/2.1/data/LMP_EXPME$FI/?format=TSV&compressed=true"
+
 data <- read_lmp_data("https://webgate.ec.europa.eu/empl/redisstat/api/dissemination/sdmx/2.1/data/LMP_EXPME$FI/?format=CSV")
+
+data <- read_lmp_data(new_url)
+
+
 data <- select(data, -FREQ) |>
         filter(UNIT == "MIO_EUR")
 
@@ -51,3 +59,7 @@ data <- filter(data, SEX == "T", AGE == "TOTAL") %>%
 lmp_participants <- left_join(data, flag_key, by = "flag")
 
 usethis::use_data(lmp_participants, overwrite = TRUE)
+
+
+data <- read.table("https://webgate.ec.europa.eu/empl/redisstat/api/dissemination/sdmx/2.1/data/LMP_EXPME/?format=TSV", header = TRUE, sep = "\t")
+separate(data, names(data)[1], c("FREQ", "GEO", "UNIT", "LMP_TYPE", "EXPTYPE", "TIME_PERIOD"), sep = ",")
